@@ -269,7 +269,7 @@ Pebble.addEventListener("appmessage", function(msg) {
 });
 
 var sendFirebaseCommand = function(app, button) {
-  fb.child(app).child('commands').push(button);
+  fb.child('plugins').child(app).child('commands').push(button);
 }
 
 Pebble.addEventListener("showConfiguration", function (e) {
@@ -293,18 +293,18 @@ var firebaseUpdates = function() {
 
 var updateAppText = function() {
   if(current_app != null) {
-    fb.child(current_app).child('text').on('value', function(snapshot) {
+    fb.child('plugins').child(current_app).child('text').on('value', function(snapshot) {
       var data = snapshot.val();
       console.log('updateAppText value: ' + JSON.stringify(data));
-      var main = data['main'];
-      var header = data['header'];
+      var main = data['main']['content'];
+      var header = data['header']['content'];
       Pebble.sendAppMessage({'text_main': main, 'text_header': header});
     });
   }
 };
 
 var updateAppMenu = function() {
-  fb.on('value', function(snapshot) {
+  fb.child('plugins').on('value', function(snapshot) {
     var data = snapshot.val();
     console.log('udateAppMenu value:' + JSON.stringify(Object.keys(data)));
     var apps = Object.keys(data);
