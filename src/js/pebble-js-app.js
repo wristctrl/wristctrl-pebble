@@ -246,7 +246,7 @@ O.prototype.Je=function(a,b){D("Firebase.resetPassword",2,2,arguments.length);cc
 function qb(a,b){x(!b||!0===a||!1===a,"Can't turn on custom loggers persistently.");!0===a?("undefined"!==typeof console&&("function"===typeof console.log?ob=q(console.log,console):"object"===typeof console.log&&(ob=function(a){console.log(a)})),b&&Ba.set("logging_enabled",!0)):a?ob=a:(ob=null,Ba.remove("logging_enabled"))}O.enableLogging=qb;O.ServerValue={TIMESTAMP:{".sv":"timestamp"}};O.SDK_VERSION="2.0.6";O.INTERNAL=Y;O.Context=Ah;O.TEST_ACCESS=$;})();
 
 var fb;
-var current_app = null;
+var current_plugin = null;
 
 Pebble.addEventListener("ready", function() {
   console.log("PebbleKit JS is Ready!");
@@ -259,9 +259,9 @@ Pebble.addEventListener("appmessage", function(msg) {
   var button  = payload['command_button'];
   var app     = payload['command_app'];
 
-  current_app = app;
+  current_plugin = app;
 
-  updateAppText();
+  updatePluginText();
 
   if(button != undefined) {
     sendFirebaseCommand(app, button);
@@ -288,34 +288,48 @@ var fireGet = function(uid){
 };
 
 var firebaseUpdates = function() {
-  updateAppMenu();
+  updatePluginMenu();
 };
 
-var updateAppText = function() {
-  if(current_app != null) {
-    fb.child('plugins').child(current_app).child('text').on('value', function(snapshot) {
-      var data = snapshot.val();
-      console.log('updateAppText value: ' + JSON.stringify(data));
-      var main = data['main']['content'];
-      var header = data['header']['content'];
-      Pebble.sendAppMessage({'text_main': main, 'text_header': header});
+var updatePluginText = function() {
+  if(current_plugin != null) {
+    fb.child('plugins/' + current_plugin + '/text/header/content').on('value', function(snapshot) {
+      var header = snapshot.val();
+      console.log('header value: ' + header);
+      Pebble.sendAppMessage({'text_header': header}, function() {
+        console.log('Header Success!');
+      }, function() {
+        console.log('Header Failure!');
+        Pebble.sendAppMessage({'text_header': header});
+      });
+    });
+
+    fb.child('plugins/' + current_plugin + '/text/main/content').on('value', function(snapshot) {
+      var main = snapshot.val();
+      console.log('main value: ' + main);
+      Pebble.sendAppMessage({'text_main': main}, function() {
+        console.log('Main Success!');
+      }, function() {
+        console.log('Main Failure!');
+        Pebble.sendAppMessage({'text_main': main});
+      });
     });
   }
 };
 
-var updateAppMenu = function() {
-  fb.child('plugins').on('value', function(snapshot) {
+var updatePluginMenu = function() {
+  fb.child('plugin-map').on('value', function(snapshot) {
     var data = snapshot.val();
-    console.log('udateAppMenu value:' + JSON.stringify(Object.keys(data)));
-    var apps = Object.keys(data);
-    var appCount = apps.length;
+    console.log('udatePluginMenu value:' + JSON.stringify(Object.keys(data)));
+    var plugins = Object.keys(data);
+    var pluginCount = plugins.length;
     if(data != null) {
-      hash = appArrayToPebbleHash(apps);
+      hash = appArrayToPebbleHash(plugins);
       Pebble.sendAppMessage(hash, function() {
-        console.log("Update App Menu, Success.");
-        Pebble.sendAppMessage({'app_count': appCount});
+        console.log("Update Plugin Menu, Success.");
+        Pebble.sendAppMessage({'app_count': pluginCount});
       }, function() {
-        console.log("Update App Menu, Failed.");
+        console.log("Update Plugin Menu, Failed.");
       });
     }
   });

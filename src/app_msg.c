@@ -55,16 +55,20 @@ static void inbox_received_callback(DictionaryIterator *iterator, void *context)
         text_layer_set_text(loading_text_layer, ""); // clear out loading
         num_of_apps = t->value->int16;
         menu_layer_reload_data(menu_layer);
+        break;
       case KEY_TEXT_MAIN:
         APP_LOG(APP_LOG_LEVEL_INFO, "Update Text Main %s", t->value->cstring);
         if(main_text != NULL) {
-          text_layer_set_text(main_text, t->value->cstring);
+          /* text_layer_set_text(main_text, t->value->cstring); */
+          text_layer_set_text(main_text, "Main Text");
         }
         break;
       case KEY_TEXT_HEADER:
         APP_LOG(APP_LOG_LEVEL_INFO, "Update Text Header %s", t->value->cstring);
         if(header_text != NULL) {
+          APP_LOG(APP_LOG_LEVEL_INFO, "THIS GOT RUN!!");
           text_layer_set_text(header_text, t->value->cstring);
+          /* text_layer_set_text(header_text, "Header Text"); */
         }
         break;
     }
