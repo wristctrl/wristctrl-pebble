@@ -59,14 +59,15 @@ static void inbox_received_callback(DictionaryIterator *iterator, void *context)
         menu_layer_reload_data(menu_layer);
         break;
       case KEY_TEXT_MAIN:
-        APP_LOG(APP_LOG_LEVEL_INFO, "Update Text Main %s", t->value->cstring);
+        APP_LOG(APP_LOG_LEVEL_INFO, "Update Text Main");
         if(main_text_layer != NULL) {
           strcpy(main_text, t->value->cstring);
           text_layer_set_text(main_text_layer, main_text);
         }
         break;
       case KEY_TEXT_HEADER:
-        APP_LOG(APP_LOG_LEVEL_INFO, "Update Text Header %s", t->value->cstring);
+        /* APP_LOG(APP_LOG_LEVEL_INFO, "Update Text Header %s", t->value->cstring); */
+        APP_LOG(APP_LOG_LEVEL_INFO, "Update Text Header");
         if(header_text_layer != NULL) {
           strcpy(header_text, t->value->cstring);
           text_layer_set_text(header_text_layer, header_text);
