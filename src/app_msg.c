@@ -68,7 +68,6 @@ static void inbox_received_callback(DictionaryIterator *iterator, void *context)
       case KEY_TEXT_HEADER:
         APP_LOG(APP_LOG_LEVEL_INFO, "Update Text Header %s", t->value->cstring);
         if(header_text_layer != NULL) {
-          APP_LOG(APP_LOG_LEVEL_INFO, "THIS GOT RUN!!");
           strcpy(header_text, t->value->cstring);
           text_layer_set_text(header_text_layer, header_text);
         }

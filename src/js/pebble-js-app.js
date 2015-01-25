@@ -287,10 +287,11 @@ var fireGet = function(uniqueId){
 var updatePluginText = function() {
   if(current_plugin != null) {
     // update header text
+    fb.child('plugins/' + current_plugin + '/text/header/content').off();
     fb.child('plugins/' + current_plugin + '/text/header/content').on('value', function(snapshot) {
       var header = snapshot.val();
 
-      console.log('header value: ' + header);
+      console.log('header value: ' + header + ' ' + Date.now());
 
       Pebble.sendAppMessage({'text_header': header}, function() {
         console.log('Header Success!');
@@ -301,6 +302,7 @@ var updatePluginText = function() {
     });
 
     // update main text
+    fb.child('plugins/' + current_plugin + '/text/main/content').off();
     fb.child('plugins/' + current_plugin + '/text/main/content').on('value', function(snapshot) {
       var main = snapshot.val();
 
@@ -317,6 +319,7 @@ var updatePluginText = function() {
 };
 
 var updatePluginMenu = function() {
+  fb.child('plugin-map').off();
   fb.child('plugin-map').on('value', function(snapshot) {
     var data = snapshot.val();
     console.log('udatePluginMenu value:' + JSON.stringify(Object.keys(data)));
