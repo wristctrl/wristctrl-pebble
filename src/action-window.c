@@ -9,8 +9,10 @@ extern char apps[8][64];
 
 static ActionBarLayer* action_bar;
 
-TextLayer* header_text;
-TextLayer* main_text;
+TextLayer* header_text_layer;
+TextLayer* main_text_layer;
+char header_text[64];
+char main_text[64];
 static TextLayer* footer_text;
 
 static GBitmap* action_icon_play;
@@ -71,21 +73,23 @@ static void click_config_provider(void *context) {
 static void window_load(Window *window) {
   Layer *window_layer = window_get_root_layer(window);
 
-  header_text = text_layer_create((GRect) { .origin = { 5, 5 }, .size = { 115, 50 } });
-  text_layer_set_text(header_text, "loading...");
-  text_layer_set_font(header_text, fonts_get_system_font(FONT_KEY_GOTHIC_24));
-  text_layer_set_overflow_mode(header_text, GTextOverflowModeFill);
-  text_layer_set_text_color(header_text, GColorBlack);
-  text_layer_set_background_color(header_text, GColorClear);
-  layer_add_child(window_layer, text_layer_get_layer(header_text));
+  header_text_layer = text_layer_create((GRect) { .origin = { 5, 5 }, .size = { 115, 50 } });
+  strcpy(header_text, "loading...");
+  text_layer_set_text(header_text_layer, header_text);
+  text_layer_set_font(header_text_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24));
+  text_layer_set_overflow_mode(header_text_layer, GTextOverflowModeFill);
+  text_layer_set_text_color(header_text_layer, GColorBlack);
+  text_layer_set_background_color(header_text_layer, GColorClear);
+  layer_add_child(window_layer, text_layer_get_layer(header_text_layer));
 
-  main_text = text_layer_create((GRect) { .origin = { 5, 60 }, .size = { 115, 60 } });
-  text_layer_set_text(main_text, "loading...");
-  text_layer_set_font(main_text, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
-  text_layer_set_overflow_mode(main_text, GTextOverflowModeFill);
-  text_layer_set_text_color(main_text, GColorBlack);
-  text_layer_set_background_color(main_text, GColorClear);
-  layer_add_child(window_layer, text_layer_get_layer(main_text));
+  main_text_layer = text_layer_create((GRect) { .origin = { 5, 60 }, .size = { 115, 60 } });
+  strcpy(main_text, "loading...");
+  text_layer_set_text(main_text_layer, main_text);
+  text_layer_set_font(main_text_layer, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
+  text_layer_set_overflow_mode(main_text_layer, GTextOverflowModeFill);
+  text_layer_set_text_color(main_text_layer, GColorBlack);
+  text_layer_set_background_color(main_text_layer, GColorClear);
+  layer_add_child(window_layer, text_layer_get_layer(main_text_layer));
 
   footer_text = text_layer_create((GRect) { .origin = { 5, 125 }, .size = { 115, 23 } });
   text_layer_set_text(footer_text, apps[current_app_num]);

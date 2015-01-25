@@ -6,8 +6,10 @@ char apps[8][64];
 extern MenuLayer* menu_layer;
 extern TextLayer* loading_text_layer;
 
-extern TextLayer* header_text;
-extern TextLayer* main_text;
+extern TextLayer* header_text_layer;
+extern TextLayer* main_text_layer;
+extern char header_text[64];
+extern char main_text[64];
 
 static void inbox_received_callback(DictionaryIterator *iterator, void *context) {
   APP_LOG(APP_LOG_LEVEL_INFO, "Message received!");
@@ -58,17 +60,17 @@ static void inbox_received_callback(DictionaryIterator *iterator, void *context)
         break;
       case KEY_TEXT_MAIN:
         APP_LOG(APP_LOG_LEVEL_INFO, "Update Text Main %s", t->value->cstring);
-        if(main_text != NULL) {
-          /* text_layer_set_text(main_text, t->value->cstring); */
-          text_layer_set_text(main_text, "Main Text");
+        if(main_text_layer != NULL) {
+          strcpy(main_text, t->value->cstring);
+          text_layer_set_text(main_text_layer, main_text);
         }
         break;
       case KEY_TEXT_HEADER:
         APP_LOG(APP_LOG_LEVEL_INFO, "Update Text Header %s", t->value->cstring);
-        if(header_text != NULL) {
+        if(header_text_layer != NULL) {
           APP_LOG(APP_LOG_LEVEL_INFO, "THIS GOT RUN!!");
-          text_layer_set_text(header_text, t->value->cstring);
-          /* text_layer_set_text(header_text, "Header Text"); */
+          strcpy(header_text, t->value->cstring);
+          text_layer_set_text(header_text_layer, header_text);
         }
         break;
     }

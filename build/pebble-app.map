@@ -6,10 +6,12 @@ Archive member included because of file (symbol)
 Allocating common symbols
 Common symbol       size              file
 
+header_text_layer   0x4               src/action-window.c.14.o
 menu_layer          0x4               src/pebble-app.c.14.o
-header_text         0x4               src/action-window.c.14.o
-main_text           0x4               src/action-window.c.14.o
+header_text         0x40              src/action-window.c.14.o
+main_text           0x40              src/action-window.c.14.o
 loading_text_layer  0x4               src/pebble-app.c.14.o
+main_text_layer     0x4               src/action-window.c.14.o
 apps                0x200             src/app_msg.c.14.o
 
 Discarded input sections
@@ -439,7 +441,6 @@ Discarded input sections
  .text.srand    0x0000000000000000        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
  .text.strcat   0x0000000000000000        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
  .text.strcmp   0x0000000000000000        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
- .text.strcpy   0x0000000000000000        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
  .text.strftime
                 0x0000000000000000        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
  .text.strlen   0x0000000000000000        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
@@ -656,7 +657,7 @@ LOAD /Users/kirby/pebble-dev/PebbleSDK-2.8.1/arm-cs-tools/bin/../lib/gcc/arm-non
  .pbl_header    0x0000000000000000       0x82 appinfo.auto.c.14.o
                 0x0000000000000000                __pbl_app_info
 
-.text           0x0000000000000084      0xe6d
+.text           0x0000000000000084      0xebf
  *(.text)
  .text          0x0000000000000084       0x14 /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
  *(.text.*)
@@ -673,296 +674,300 @@ LOAD /Users/kirby/pebble-dev/PebbleSDK-2.8.1/arm-cs-tools/bin/../lib/gcc/arm-non
  .text.update_up_and_down_icons
                 0x00000000000001d4       0x68 src/action-window.c.14.o
  .text.window_load
-                0x000000000000023c      0x18c src/action-window.c.14.o
+                0x000000000000023c      0x1b8 src/action-window.c.14.o
  .text.click_config_provider
-                0x00000000000003c8       0x44 src/action-window.c.14.o
+                0x00000000000003f4       0x44 src/action-window.c.14.o
  .text.select_long_click_handler
-                0x000000000000040c       0x2c src/action-window.c.14.o
+                0x0000000000000438       0x2c src/action-window.c.14.o
  .text.action_window_init
-                0x0000000000000438       0xf0 src/action-window.c.14.o
-                0x0000000000000438                action_window_init
+                0x0000000000000464       0xf0 src/action-window.c.14.o
+                0x0000000000000464                action_window_init
  .text.outbox_sent_callback
-                0x0000000000000528       0x18 src/app_msg.c.14.o
+                0x0000000000000554       0x18 src/app_msg.c.14.o
  .text.outbox_failed_callback
-                0x0000000000000540       0x18 src/app_msg.c.14.o
+                0x000000000000056c       0x18 src/app_msg.c.14.o
  .text.inbox_dropped_callback
-                0x0000000000000558       0x18 src/app_msg.c.14.o
+                0x0000000000000584       0x18 src/app_msg.c.14.o
  .text.inbox_received_callback
-                0x0000000000000570      0x270 src/app_msg.c.14.o
+                0x000000000000059c      0x294 src/app_msg.c.14.o
  .text.send_command
-                0x00000000000007e0       0x7c src/app_msg.c.14.o
-                0x00000000000007e0                send_command
+                0x0000000000000830       0x7c src/app_msg.c.14.o
+                0x0000000000000830                send_command
  .text.app_message_init
-                0x000000000000085c       0x48 src/app_msg.c.14.o
-                0x000000000000085c                app_message_init
+                0x00000000000008ac       0x48 src/app_msg.c.14.o
+                0x00000000000008ac                app_message_init
  .text.menu_get_num_sections_callback
-                0x00000000000008a4        0x4 src/pebble-app.c.14.o
+                0x00000000000008f4        0x4 src/pebble-app.c.14.o
  .text.menu_get_num_rows_callback
-                0x00000000000008a8       0x14 src/pebble-app.c.14.o
+                0x00000000000008f8       0x14 src/pebble-app.c.14.o
  .text.menu_get_header_height_callback
-                0x00000000000008bc        0x4 src/pebble-app.c.14.o
+                0x000000000000090c        0x4 src/pebble-app.c.14.o
  .text.window_unload
-                0x00000000000008c0       0x2c src/pebble-app.c.14.o
+                0x0000000000000910       0x2c src/pebble-app.c.14.o
  .text.window_load
-                0x00000000000008ec       0xe4 src/pebble-app.c.14.o
+                0x000000000000093c       0xe4 src/pebble-app.c.14.o
  .text.menu_select_callback
-                0x00000000000009d0        0x6 src/pebble-app.c.14.o
- *fill*         0x00000000000009d6        0x2 
+                0x0000000000000a20        0x6 src/pebble-app.c.14.o
+ *fill*         0x0000000000000a26        0x2 
  .text.menu_draw_header_callback
-                0x00000000000009d8        0xc src/pebble-app.c.14.o
+                0x0000000000000a28        0xc src/pebble-app.c.14.o
  .text.menu_draw_row_callback
-                0x00000000000009e4       0x24 src/pebble-app.c.14.o
+                0x0000000000000a34       0x24 src/pebble-app.c.14.o
  .text.startup.main
-                0x0000000000000a08       0x78 src/pebble-app.c.14.o
-                0x0000000000000a08                main
+                0x0000000000000a58       0x78 src/pebble-app.c.14.o
+                0x0000000000000a58                main
  .text.action_bar_layer_add_to_window
-                0x0000000000000a80        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000a80                action_bar_layer_add_to_window
+                0x0000000000000ad0        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000ad0                action_bar_layer_add_to_window
  .text.action_bar_layer_create
-                0x0000000000000a8c        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000a8c                action_bar_layer_create
+                0x0000000000000adc        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000adc                action_bar_layer_create
  .text.action_bar_layer_destroy
-                0x0000000000000a98        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000a98                action_bar_layer_destroy
+                0x0000000000000ae8        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000ae8                action_bar_layer_destroy
  .text.action_bar_layer_set_click_config_provider
-                0x0000000000000aa4        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000aa4                action_bar_layer_set_click_config_provider
+                0x0000000000000af4        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000af4                action_bar_layer_set_click_config_provider
  .text.action_bar_layer_set_icon
-                0x0000000000000ab0        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000ab0                action_bar_layer_set_icon
+                0x0000000000000b00        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000b00                action_bar_layer_set_icon
  .text.app_event_loop
-                0x0000000000000abc        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000abc                app_event_loop
- .text.app_log  0x0000000000000ac8        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000ac8                app_log
+                0x0000000000000b0c        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000b0c                app_event_loop
+ .text.app_log  0x0000000000000b18        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000b18                app_log
  .text.app_message_open
-                0x0000000000000ad4        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000ad4                app_message_open
+                0x0000000000000b24        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000b24                app_message_open
  .text.dict_read_first
-                0x0000000000000ae0        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000ae0                dict_read_first
+                0x0000000000000b30        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000b30                dict_read_first
  .text.dict_read_next
-                0x0000000000000aec        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000aec                dict_read_next
+                0x0000000000000b3c        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000b3c                dict_read_next
  .text.dict_write_cstring
-                0x0000000000000af8        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000af8                dict_write_cstring
+                0x0000000000000b48        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000b48                dict_write_cstring
  .text.dict_write_end
-                0x0000000000000b04        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000b04                dict_write_end
+                0x0000000000000b54        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000b54                dict_write_end
  .text.fonts_get_system_font
-                0x0000000000000b10        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000b10                fonts_get_system_font
+                0x0000000000000b60        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000b60                fonts_get_system_font
  .text.gbitmap_create_with_resource
-                0x0000000000000b1c        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000b1c                gbitmap_create_with_resource
+                0x0000000000000b6c        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000b6c                gbitmap_create_with_resource
  .text.gbitmap_destroy
-                0x0000000000000b28        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000b28                gbitmap_destroy
+                0x0000000000000b78        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000b78                gbitmap_destroy
  .text.layer_add_child
-                0x0000000000000b34        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000b34                layer_add_child
+                0x0000000000000b84        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000b84                layer_add_child
  .text.layer_get_frame
-                0x0000000000000b40        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000b40                layer_get_frame
- .text.memset   0x0000000000000b4c        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000b4c                memset
+                0x0000000000000b90        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000b90                layer_get_frame
+ .text.memset   0x0000000000000b9c        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000b9c                memset
  .text.menu_cell_basic_draw
-                0x0000000000000b58        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000b58                menu_cell_basic_draw
+                0x0000000000000ba8        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000ba8                menu_cell_basic_draw
  .text.menu_cell_basic_header_draw
-                0x0000000000000b64        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000b64                menu_cell_basic_header_draw
+                0x0000000000000bb4        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000bb4                menu_cell_basic_header_draw
  .text.menu_layer_create
-                0x0000000000000b70        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000b70                menu_layer_create
+                0x0000000000000bc0        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000bc0                menu_layer_create
  .text.menu_layer_destroy
-                0x0000000000000b7c        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000b7c                menu_layer_destroy
+                0x0000000000000bcc        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000bcc                menu_layer_destroy
  .text.menu_layer_get_layer
-                0x0000000000000b88        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000b88                menu_layer_get_layer
+                0x0000000000000bd8        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000bd8                menu_layer_get_layer
  .text.menu_layer_reload_data
-                0x0000000000000b94        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000b94                menu_layer_reload_data
+                0x0000000000000be4        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000be4                menu_layer_reload_data
  .text.menu_layer_set_click_config_onto_window
-                0x0000000000000ba0        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000ba0                menu_layer_set_click_config_onto_window
+                0x0000000000000bf0        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000bf0                menu_layer_set_click_config_onto_window
  .text.snprintf
-                0x0000000000000bac        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000bac                snprintf
+                0x0000000000000bfc        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000bfc                snprintf
+ .text.strcpy   0x0000000000000c08        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000c08                strcpy
  .text.text_layer_create
-                0x0000000000000bb8        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000bb8                text_layer_create
+                0x0000000000000c14        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000c14                text_layer_create
  .text.text_layer_destroy
-                0x0000000000000bc4        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000bc4                text_layer_destroy
+                0x0000000000000c20        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000c20                text_layer_destroy
  .text.text_layer_get_layer
-                0x0000000000000bd0        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000bd0                text_layer_get_layer
+                0x0000000000000c2c        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000c2c                text_layer_get_layer
  .text.text_layer_set_background_color
-                0x0000000000000bdc        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000bdc                text_layer_set_background_color
+                0x0000000000000c38        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000c38                text_layer_set_background_color
  .text.text_layer_set_font
-                0x0000000000000be8        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000be8                text_layer_set_font
+                0x0000000000000c44        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000c44                text_layer_set_font
  .text.text_layer_set_overflow_mode
-                0x0000000000000bf4        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000bf4                text_layer_set_overflow_mode
+                0x0000000000000c50        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000c50                text_layer_set_overflow_mode
  .text.text_layer_set_text
-                0x0000000000000c00        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000c00                text_layer_set_text
+                0x0000000000000c5c        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000c5c                text_layer_set_text
  .text.text_layer_set_text_color
-                0x0000000000000c0c        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000c0c                text_layer_set_text_color
+                0x0000000000000c68        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000c68                text_layer_set_text_color
  .text.vibes_enqueue_custom_pattern
-                0x0000000000000c18        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000c18                vibes_enqueue_custom_pattern
+                0x0000000000000c74        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000c74                vibes_enqueue_custom_pattern
  .text.window_create
-                0x0000000000000c24        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000c24                window_create
+                0x0000000000000c80        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000c80                window_create
  .text.window_destroy
-                0x0000000000000c30        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000c30                window_destroy
+                0x0000000000000c8c        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000c8c                window_destroy
  .text.window_get_root_layer
-                0x0000000000000c3c        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000c3c                window_get_root_layer
+                0x0000000000000c98        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000c98                window_get_root_layer
  .text.window_set_window_handlers
-                0x0000000000000c48        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000c48                window_set_window_handlers
+                0x0000000000000ca4        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000ca4                window_set_window_handlers
  .text.window_stack_push
-                0x0000000000000c54        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000c54                window_stack_push
+                0x0000000000000cb0        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000cb0                window_stack_push
  .text.app_message_inbox_size_maximum
-                0x0000000000000c60        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000c60                app_message_inbox_size_maximum
+                0x0000000000000cbc        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000cbc                app_message_inbox_size_maximum
  .text.app_message_outbox_begin
-                0x0000000000000c6c        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000c6c                app_message_outbox_begin
+                0x0000000000000cc8        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000cc8                app_message_outbox_begin
  .text.app_message_outbox_send
-                0x0000000000000c78        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000c78                app_message_outbox_send
+                0x0000000000000cd4        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000cd4                app_message_outbox_send
  .text.app_message_outbox_size_maximum
-                0x0000000000000c84        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000c84                app_message_outbox_size_maximum
+                0x0000000000000ce0        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000ce0                app_message_outbox_size_maximum
  .text.app_message_register_inbox_dropped
-                0x0000000000000c90        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000c90                app_message_register_inbox_dropped
+                0x0000000000000cec        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000cec                app_message_register_inbox_dropped
  .text.app_message_register_inbox_received
-                0x0000000000000c9c        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000c9c                app_message_register_inbox_received
+                0x0000000000000cf8        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000cf8                app_message_register_inbox_received
  .text.app_message_register_outbox_failed
-                0x0000000000000ca8        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000ca8                app_message_register_outbox_failed
+                0x0000000000000d04        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000d04                app_message_register_outbox_failed
  .text.app_message_register_outbox_sent
-                0x0000000000000cb4        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000cb4                app_message_register_outbox_sent
+                0x0000000000000d10        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000d10                app_message_register_outbox_sent
  .text.window_long_click_subscribe
-                0x0000000000000cc0        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000cc0                window_long_click_subscribe
+                0x0000000000000d1c        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000d1c                window_long_click_subscribe
  .text.window_single_click_subscribe
-                0x0000000000000ccc        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000ccc                window_single_click_subscribe
+                0x0000000000000d28        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000d28                window_single_click_subscribe
  .text.menu_layer_set_callbacks
-                0x0000000000000cd8        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
-                0x0000000000000cd8                menu_layer_set_callbacks
+                0x0000000000000d34        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+                0x0000000000000d34                menu_layer_set_callbacks
  *(.rodata)
- .rodata        0x0000000000000ce4       0x18 src/action-window.c.14.o
+ .rodata        0x0000000000000d40       0x18 src/action-window.c.14.o
  *(.rodata*)
  .rodata.str1.1
-                0x0000000000000cfc       0x8e src/action-window.c.14.o
- *fill*         0x0000000000000d8a        0x2 
- .rodata.segments.6695
-                0x0000000000000d8c        0x4 src/action-window.c.14.o
+                0x0000000000000d58       0x8e src/action-window.c.14.o
+ *fill*         0x0000000000000de6        0x2 
+ .rodata.segments.6697
+                0x0000000000000de8        0x4 src/action-window.c.14.o
  .rodata.str1.1
-                0x0000000000000d90      0x10c src/app_msg.c.14.o
-                                        0x10d (size before relaxing)
+                0x0000000000000dec      0x102 src/app_msg.c.14.o
+                                        0x103 (size before relaxing)
  .rodata.str1.1
-                0x0000000000000e9c       0x55 src/pebble-app.c.14.o
+                0x0000000000000eee       0x55 src/pebble-app.c.14.o
 
-.glue_7         0x0000000000000ef4        0x0
+.glue_7         0x0000000000000f44        0x0
  .glue_7        0x0000000000000000        0x0 linker stubs
 
-.glue_7t        0x0000000000000ef4        0x0
+.glue_7t        0x0000000000000f44        0x0
  .glue_7t       0x0000000000000000        0x0 linker stubs
 
-.vfp11_veneer   0x0000000000000ef4        0x0
+.vfp11_veneer   0x0000000000000f44        0x0
  .vfp11_veneer  0x0000000000000000        0x0 linker stubs
 
-.v4_bx          0x0000000000000ef4        0x0
+.v4_bx          0x0000000000000f44        0x0
  .v4_bx         0x0000000000000000        0x0 linker stubs
 
-.iplt           0x0000000000000ef4        0x0
+.iplt           0x0000000000000f44        0x0
  .iplt          0x0000000000000000        0x0 /Users/kirby/pebble-dev/PebbleSDK-2.8.1/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.rel.dyn        0x0000000000000ef4        0x0
+.rel.dyn        0x0000000000000f44        0x0
  .rel.iplt      0x0000000000000000        0x0 /Users/kirby/pebble-dev/PebbleSDK-2.8.1/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
  .rel.got       0x0000000000000000        0x0 /Users/kirby/pebble-dev/PebbleSDK-2.8.1/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.data           0x0000000000000ef4        0xc
+.data           0x0000000000000f44        0xc
  *(.data)
- .data          0x0000000000000ef4        0x0 /Users/kirby/pebble-dev/PebbleSDK-2.8.1/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crti.o
- .data          0x0000000000000ef4        0x4 /Users/kirby/pebble-dev/PebbleSDK-2.8.1/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
-                0x0000000000000ef4                __dso_handle
- .data          0x0000000000000ef8        0x8 src/action-window.c.14.o
- .data          0x0000000000000f00        0x0 src/app_msg.c.14.o
- .data          0x0000000000000f00        0x0 src/pebble-app.c.14.o
- .data          0x0000000000000f00        0x0 appinfo.auto.c.14.o
- .data          0x0000000000000f00        0x0 /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
- .data          0x0000000000000f00        0x0 /Users/kirby/pebble-dev/PebbleSDK-2.8.1/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
- .data          0x0000000000000f00        0x0 /Users/kirby/pebble-dev/PebbleSDK-2.8.1/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtn.o
+ .data          0x0000000000000f44        0x0 /Users/kirby/pebble-dev/PebbleSDK-2.8.1/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crti.o
+ .data          0x0000000000000f44        0x4 /Users/kirby/pebble-dev/PebbleSDK-2.8.1/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
+                0x0000000000000f44                __dso_handle
+ .data          0x0000000000000f48        0x8 src/action-window.c.14.o
+ .data          0x0000000000000f50        0x0 src/app_msg.c.14.o
+ .data          0x0000000000000f50        0x0 src/pebble-app.c.14.o
+ .data          0x0000000000000f50        0x0 appinfo.auto.c.14.o
+ .data          0x0000000000000f50        0x0 /Users/kirby/pebble-dev/PebbleSDK-2.8.1/Pebble/lib/libpebble.a(tmpL9Cjnwpebble.o)
+ .data          0x0000000000000f50        0x0 /Users/kirby/pebble-dev/PebbleSDK-2.8.1/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
+ .data          0x0000000000000f50        0x0 /Users/kirby/pebble-dev/PebbleSDK-2.8.1/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtn.o
  *(.data.*)
 
-.igot.plt       0x0000000000000f00        0x0
+.igot.plt       0x0000000000000f50        0x0
  .igot.plt      0x0000000000000000        0x0 /Users/kirby/pebble-dev/PebbleSDK-2.8.1/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.got            0x0000000000000f00       0x18
- .got           0x0000000000000f00       0x18 /Users/kirby/pebble-dev/PebbleSDK-2.8.1/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
+.got            0x0000000000000f50       0x20
+ .got           0x0000000000000f50       0x20 /Users/kirby/pebble-dev/PebbleSDK-2.8.1/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.got.plt        0x0000000000000f18        0xc
- .got.plt       0x0000000000000f18        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
-                0x0000000000000f18                _GLOBAL_OFFSET_TABLE_
+.got.plt        0x0000000000000f70        0xc
+ .got.plt       0x0000000000000f70        0xc /Users/kirby/pebble-dev/PebbleSDK-2.8.1/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
+                0x0000000000000f70                _GLOBAL_OFFSET_TABLE_
 
-.bss            0x0000000000000f24      0x248
+.bss            0x0000000000000f7c      0x2c8
  *(.bss)
  *(.bss.*)
  .bss.action_bar
-                0x0000000000000f24        0x4 src/action-window.c.14.o
+                0x0000000000000f7c        0x4 src/action-window.c.14.o
  .bss.footer_text
-                0x0000000000000f28        0x4 src/action-window.c.14.o
- .bss.action_icon_pause
-                0x0000000000000f2c        0x4 src/action-window.c.14.o
+                0x0000000000000f80        0x4 src/action-window.c.14.o
  .bss.is_playing
-                0x0000000000000f30        0x1 src/action-window.c.14.o
- *fill*         0x0000000000000f31        0x3 
- .bss.action_icon_left_arrow
-                0x0000000000000f34        0x4 src/action-window.c.14.o
- .bss.action_icon_right_arrow
-                0x0000000000000f38        0x4 src/action-window.c.14.o
- .bss.is_volume_control
-                0x0000000000000f3c        0x1 src/action-window.c.14.o
- *fill*         0x0000000000000f3d        0x3 
- .bss.current_app_num
-                0x0000000000000f40        0x4 src/action-window.c.14.o
- .bss.action_icon_play
-                0x0000000000000f44        0x4 src/action-window.c.14.o
+                0x0000000000000f84        0x1 src/action-window.c.14.o
+ *fill*         0x0000000000000f85        0x3 
+ .bss.action_icon_pause
+                0x0000000000000f88        0x4 src/action-window.c.14.o
  .bss.action_icon_volume_up
-                0x0000000000000f48        0x4 src/action-window.c.14.o
+                0x0000000000000f8c        0x4 src/action-window.c.14.o
+ .bss.action_icon_left_arrow
+                0x0000000000000f90        0x4 src/action-window.c.14.o
+ .bss.action_icon_right_arrow
+                0x0000000000000f94        0x4 src/action-window.c.14.o
+ .bss.is_volume_control
+                0x0000000000000f98        0x1 src/action-window.c.14.o
+ *fill*         0x0000000000000f99        0x3 
+ .bss.action_icon_play
+                0x0000000000000f9c        0x4 src/action-window.c.14.o
+ .bss.current_app_num
+                0x0000000000000fa0        0x4 src/action-window.c.14.o
  .bss.action_icon_volume_down
-                0x0000000000000f4c        0x4 src/action-window.c.14.o
- .bss.window    0x0000000000000f50        0x4 src/action-window.c.14.o
+                0x0000000000000fa4        0x4 src/action-window.c.14.o
+ .bss.window    0x0000000000000fa8        0x4 src/action-window.c.14.o
  .bss.num_of_apps
-                0x0000000000000f54        0x4 src/app_msg.c.14.o
-                0x0000000000000f54                num_of_apps
- .bss.window    0x0000000000000f58        0x4 src/pebble-app.c.14.o
- COMMON         0x0000000000000f5c        0x8 src/action-window.c.14.o
-                0x0000000000000f5c                header_text
-                0x0000000000000f60                main_text
- COMMON         0x0000000000000f64      0x200 src/app_msg.c.14.o
-                0x0000000000000f64                apps
- COMMON         0x0000000000001164        0x8 src/pebble-app.c.14.o
-                0x0000000000001164                menu_layer
-                0x0000000000001168                loading_text_layer
+                0x0000000000000fac        0x4 src/app_msg.c.14.o
+                0x0000000000000fac                num_of_apps
+ .bss.window    0x0000000000000fb0        0x4 src/pebble-app.c.14.o
+ COMMON         0x0000000000000fb4       0x88 src/action-window.c.14.o
+                0x0000000000000fb4                header_text_layer
+                0x0000000000000fb8                header_text
+                0x0000000000000ff8                main_text
+                0x0000000000001038                main_text_layer
+ COMMON         0x000000000000103c      0x200 src/app_msg.c.14.o
+                0x000000000000103c                apps
+ COMMON         0x000000000000123c        0x8 src/pebble-app.c.14.o
+                0x000000000000123c                menu_layer
+                0x0000000000001240                loading_text_layer
 
 DISCARD
  libc.a(*)
@@ -1001,22 +1006,22 @@ OUTPUT(/Users/kirby/projects/wristctrl/pebble/build/pebble-app.elf elf32-littlea
  .comment       0x0000000000000000       0x4f appinfo.auto.c.14.o
  .comment       0x0000000000000000       0x4f /Users/kirby/pebble-dev/PebbleSDK-2.8.1/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
 
-.debug_info     0x0000000000000000     0x2969
- .debug_info    0x0000000000000000      0xe8d src/action-window.c.14.o
- .debug_info    0x0000000000000e8d      0xb04 src/app_msg.c.14.o
- .debug_info    0x0000000000001991      0xcac src/pebble-app.c.14.o
- .debug_info    0x000000000000263d      0x32c appinfo.auto.c.14.o
+.debug_info     0x0000000000000000     0x2a52
+ .debug_info    0x0000000000000000      0xf06 src/action-window.c.14.o
+ .debug_info    0x0000000000000f06      0xb74 src/app_msg.c.14.o
+ .debug_info    0x0000000000001a7a      0xcac src/pebble-app.c.14.o
+ .debug_info    0x0000000000002726      0x32c appinfo.auto.c.14.o
 
-.debug_abbrev   0x0000000000000000      0x8ea
- .debug_abbrev  0x0000000000000000      0x2d3 src/action-window.c.14.o
- .debug_abbrev  0x00000000000002d3      0x261 src/app_msg.c.14.o
- .debug_abbrev  0x0000000000000534      0x318 src/pebble-app.c.14.o
- .debug_abbrev  0x000000000000084c       0x9e appinfo.auto.c.14.o
+.debug_abbrev   0x0000000000000000      0x914
+ .debug_abbrev  0x0000000000000000      0x2e8 src/action-window.c.14.o
+ .debug_abbrev  0x00000000000002e8      0x276 src/app_msg.c.14.o
+ .debug_abbrev  0x000000000000055e      0x318 src/pebble-app.c.14.o
+ .debug_abbrev  0x0000000000000876       0x9e appinfo.auto.c.14.o
 
-.debug_loc      0x0000000000000000      0x872
- .debug_loc     0x0000000000000000      0x2a7 src/action-window.c.14.o
- .debug_loc     0x00000000000002a7      0x2db src/app_msg.c.14.o
- .debug_loc     0x0000000000000582      0x2f0 src/pebble-app.c.14.o
+.debug_loc      0x0000000000000000      0x87e
+ .debug_loc     0x0000000000000000      0x2a8 src/action-window.c.14.o
+ .debug_loc     0x00000000000002a8      0x2e6 src/app_msg.c.14.o
+ .debug_loc     0x000000000000058e      0x2f0 src/pebble-app.c.14.o
 
 .debug_aranges  0x0000000000000000      0x128
  .debug_aranges
@@ -1033,20 +1038,20 @@ OUTPUT(/Users/kirby/projects/wristctrl/pebble/build/pebble-app.elf elf32-littlea
  .debug_ranges  0x0000000000000058       0x38 src/app_msg.c.14.o
  .debug_ranges  0x0000000000000090       0x50 src/pebble-app.c.14.o
 
-.debug_line     0x0000000000000000      0x7e9
- .debug_line    0x0000000000000000      0x2b8 src/action-window.c.14.o
- .debug_line    0x00000000000002b8      0x239 src/app_msg.c.14.o
- .debug_line    0x00000000000004f1      0x1d8 src/pebble-app.c.14.o
- .debug_line    0x00000000000006c9      0x120 appinfo.auto.c.14.o
+.debug_line     0x0000000000000000      0x807
+ .debug_line    0x0000000000000000      0x2c8 src/action-window.c.14.o
+ .debug_line    0x00000000000002c8      0x247 src/app_msg.c.14.o
+ .debug_line    0x000000000000050f      0x1d8 src/pebble-app.c.14.o
+ .debug_line    0x00000000000006e7      0x120 appinfo.auto.c.14.o
 
-.debug_str      0x0000000000000000     0x1322
- .debug_str     0x0000000000000000      0x85e src/action-window.c.14.o
-                                        0x8fd (size before relaxing)
- .debug_str     0x000000000000085e      0x591 src/app_msg.c.14.o
-                                        0x779 (size before relaxing)
- .debug_str     0x0000000000000def      0x3dc src/pebble-app.c.14.o
+.debug_str      0x0000000000000000     0x134b
+ .debug_str     0x0000000000000000      0x887 src/action-window.c.14.o
+                                        0x926 (size before relaxing)
+ .debug_str     0x0000000000000887      0x591 src/app_msg.c.14.o
+                                        0x7a2 (size before relaxing)
+ .debug_str     0x0000000000000e18      0x3dc src/pebble-app.c.14.o
                                         0x74c (size before relaxing)
- .debug_str     0x00000000000011cb      0x157 appinfo.auto.c.14.o
+ .debug_str     0x00000000000011f4      0x157 appinfo.auto.c.14.o
                                         0x35c (size before relaxing)
 
 .debug_frame    0x0000000000000000      0x280
