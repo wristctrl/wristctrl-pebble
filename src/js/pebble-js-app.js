@@ -257,19 +257,19 @@ Pebble.addEventListener("appmessage", function(msg) {
   console.log("Got a message! " + JSON.stringify(msg));
   var payload = msg['payload'];
   var button  = payload['command_button'];
-  var app     = payload['command_app'];
+  var plugin  = payload['command_app'];
 
-  current_plugin = app;
+  current_plugin = plugin;
 
   updatePluginText();
 
   if(button != undefined) {
-    sendFirebaseCommand(app, button);
+    sendFirebaseCommand(plugin, button);
   }
 });
 
-var sendFirebaseCommand = function(app, button) {
-  fb.child('plugins').child(app).child('commands').push(button);
+var sendFirebaseCommand = function(plugin, button) {
+  fb.child('plugins').child(plugin).child('commands').push(button);
 }
 
 Pebble.addEventListener("showConfiguration", function (e) {
@@ -277,25 +277,21 @@ Pebble.addEventListener("showConfiguration", function (e) {
   Pebble.openURL(url);
 });
 
-var fireGet = function(uid){
-  //connect to firebase and get rooms
-  var uniqueId = uid;
-
+var fireGet = function(uniqueId){
   Firebase.INTERNAL.forceWebSockets();
   fb = new Firebase('https://8tracks-pebble.firebaseio.com/codes/' + uniqueId);
 
-  firebaseUpdates();
-};
-
-var firebaseUpdates = function() {
   updatePluginMenu();
 };
 
 var updatePluginText = function() {
   if(current_plugin != null) {
+    // update header text
     fb.child('plugins/' + current_plugin + '/text/header/content').on('value', function(snapshot) {
       var header = snapshot.val();
+
       console.log('header value: ' + header);
+
       Pebble.sendAppMessage({'text_header': header}, function() {
         console.log('Header Success!');
       }, function() {
@@ -304,9 +300,12 @@ var updatePluginText = function() {
       });
     });
 
+    // update main text
     fb.child('plugins/' + current_plugin + '/text/main/content').on('value', function(snapshot) {
       var main = snapshot.val();
+
       console.log('main value: ' + main);
+
       Pebble.sendAppMessage({'text_main': main}, function() {
         console.log('Main Success!');
       }, function() {
