@@ -16,42 +16,42 @@ char main_text[64];
 static TextLayer* footer_text;
 
 static GBitmap* action_icon_play;
-static GBitmap* action_icon_pause;
-static GBitmap* action_icon_volume_up;
-static GBitmap* action_icon_volume_down;
+/* static GBitmap* action_icon_pause; */
+/* static GBitmap* action_icon_volume_up; */
+/* static GBitmap* action_icon_volume_down; */
 static GBitmap* action_icon_right_arrow;
 static GBitmap* action_icon_left_arrow;
 
-static bool is_playing = false;
-static bool is_volume_control = false;
-
-static void vibes_shorter_pulse(void) {
-  static const uint32_t const segments[] = {100};
-  VibePattern pat = {
-    .durations = segments,
-    .num_segments = ARRAY_LENGTH(segments),
-  };
-  vibes_enqueue_custom_pattern(pat);
-}
-
-static void update_select_icon(void) {
-  action_bar_layer_set_icon(action_bar, BUTTON_ID_SELECT, is_playing ? action_icon_pause : action_icon_play);
-}
-
-static void update_up_and_down_icons(void) {
-  action_bar_layer_set_icon(action_bar, BUTTON_ID_UP,   is_volume_control ? action_icon_volume_up   : action_icon_left_arrow);
-  action_bar_layer_set_icon(action_bar, BUTTON_ID_DOWN, is_volume_control ? action_icon_volume_down : action_icon_right_arrow);
-}
-
-static void select_long_click_handler(ClickRecognizerRef recognizer, void *context) {
-  is_volume_control = !is_volume_control;
-  update_up_and_down_icons();
-  vibes_shorter_pulse();
-}
+/* static bool is_playing = false; */
+/* static bool is_volume_control = false; */
+/*  */
+/* static void vibes_shorter_pulse(void) { */
+/*   static const uint32_t const segments[] = {100}; */
+/*   VibePattern pat = { */
+/*     .durations = segments, */
+/*     .num_segments = ARRAY_LENGTH(segments), */
+/*   }; */
+/*   vibes_enqueue_custom_pattern(pat); */
+/* } */
+/*  */
+/* static void update_select_icon(void) { */
+/*   action_bar_layer_set_icon(action_bar, BUTTON_ID_SELECT, is_playing ? action_icon_pause : action_icon_play); */
+/* } */
+/*  */
+/* static void update_up_and_down_icons(void) { */
+/*   action_bar_layer_set_icon(action_bar, BUTTON_ID_UP,   is_volume_control ? action_icon_volume_up   : action_icon_left_arrow); */
+/*   action_bar_layer_set_icon(action_bar, BUTTON_ID_DOWN, is_volume_control ? action_icon_volume_down : action_icon_right_arrow); */
+/* } */
+/*  */
+/* static void select_long_click_handler(ClickRecognizerRef recognizer, void *context) { */
+/*   is_volume_control = !is_volume_control; */
+/*   update_up_and_down_icons(); */
+/*   vibes_shorter_pulse(); */
+/* } */
 
 static void select_single_click_handler(ClickRecognizerRef recognizer, void *context) {
-  is_playing = !is_playing;
-  update_select_icon();
+  /* is_playing = !is_playing; */
+  /* update_select_icon(); */
   send_command(apps[current_app_num], "select");
 }
 
@@ -67,7 +67,7 @@ static void click_config_provider(void *context) {
   window_single_click_subscribe(BUTTON_ID_SELECT,                     select_single_click_handler);
   window_single_click_subscribe(BUTTON_ID_UP,                         up_single_click_handler);
   window_single_click_subscribe(BUTTON_ID_DOWN,                       down_single_click_handler);
-  window_long_click_subscribe(  BUTTON_ID_SELECT, LONG_CLICK_HOLD_MS, select_long_click_handler, NULL);
+  /* window_long_click_subscribe(  BUTTON_ID_SELECT, LONG_CLICK_HOLD_MS, select_long_click_handler, NULL); */
 }
 
 static void window_load(Window *window) {
@@ -103,17 +103,18 @@ static void window_load(Window *window) {
   action_bar_layer_add_to_window(action_bar, window);
   action_bar_layer_set_click_config_provider(action_bar, click_config_provider);
 
-  update_select_icon();
-  update_up_and_down_icons();
+  action_bar_layer_set_icon(action_bar, BUTTON_ID_SELECT, action_icon_play);
+  action_bar_layer_set_icon(action_bar, BUTTON_ID_UP, action_icon_left_arrow);
+  action_bar_layer_set_icon(action_bar, BUTTON_ID_DOWN, action_icon_right_arrow);
 }
 
 static void window_unload(Window *window) {
   action_bar_layer_destroy(action_bar);
 
   gbitmap_destroy(action_icon_play);
-  gbitmap_destroy(action_icon_pause);
-  gbitmap_destroy(action_icon_volume_up);
-  gbitmap_destroy(action_icon_volume_down);
+  /* gbitmap_destroy(action_icon_pause); */
+  /* gbitmap_destroy(action_icon_volume_up); */
+  /* gbitmap_destroy(action_icon_volume_down); */
   gbitmap_destroy(action_icon_right_arrow);
   gbitmap_destroy(action_icon_left_arrow);
 
@@ -128,9 +129,9 @@ void action_window_init(int app_num) {
   send_command(apps[current_app_num], NULL);
 
   action_icon_play        = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_ACTION_PLAY);
-  action_icon_pause       = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_ACTION_PAUSE);
-  action_icon_volume_up   = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_ACTION_VOLUME_UP);
-  action_icon_volume_down = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_ACTION_VOLUME_DOWN);
+  /* action_icon_pause       = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_ACTION_PAUSE); */
+  /* action_icon_volume_up   = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_ACTION_VOLUME_UP); */
+  /* action_icon_volume_down = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_ACTION_VOLUME_DOWN); */
   action_icon_right_arrow = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_ACTION_RIGHT_ARROW);
   action_icon_left_arrow = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_ACTION_LEFT_ARROW);
 
